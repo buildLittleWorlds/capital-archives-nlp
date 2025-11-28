@@ -35,18 +35,18 @@ Click any badge below to open the tutorial directly in Google Colab:
 
 ## Files Overview
 
-### Data Files
+### Data Files (in `data/` folder)
 
 | File | Records | Description |
 |------|---------|-------------|
-| `scholars.csv` | 40 | Biographical registry of philosophers, scientists, historians |
-| `manuscripts.csv` | 125 | Catalog of archived texts (metadata only) |
-| `manuscript_texts.csv` | 169 sections | Actual text content for NLP analysis (~30,000 words) |
-| `debates.csv` | 30 | Recorded scholarly arguments |
-| `archivist_shops.csv` | 25 | Licensed archive establishments |
-| `expeditions.csv` | 20 | Documented journeys to Yeller Quarry, Mirado, etc. |
-| `word_index.csv` | 73 | Disputed terms with school-specific definitions |
-| `forgery_evidence.csv` | 15 | Evidence for the capstone forgery investigation |
+| `data/scholars.csv` | 40 | Biographical registry of philosophers, scientists, historians |
+| `data/manuscripts.csv` | 125 | Catalog of archived texts (metadata only) |
+| `data/manuscript_texts.csv` | 169 sections | Actual text content for NLP analysis (~30,000 words) |
+| `data/debates.csv` | 30 | Recorded scholarly arguments |
+| `data/archivist_shops.csv` | 25 | Licensed archive establishments |
+| `data/expeditions.csv` | 20 | Documented journeys to Yeller Quarry, Mirado, etc. |
+| `data/word_index.csv` | 73 | Disputed terms with school-specific definitions |
+| `data/forgery_evidence.csv` | 15 | Evidence for the capstone forgery investigation |
 
 ### Tutorial Topics
 
@@ -130,14 +130,14 @@ nltk.download('vader_lexicon')
 ```python
 import pandas as pd
 
-scholars = pd.read_csv('scholars.csv')
-manuscripts = pd.read_csv('manuscripts.csv')
-texts = pd.read_csv('manuscript_texts.csv')
-debates = pd.read_csv('debates.csv')
-shops = pd.read_csv('archivist_shops.csv')
-expeditions = pd.read_csv('expeditions.csv')
-word_index = pd.read_csv('word_index.csv')
-forgery = pd.read_csv('forgery_evidence.csv')
+scholars = pd.read_csv('data/scholars.csv')
+manuscripts = pd.read_csv('data/manuscripts.csv')
+texts = pd.read_csv('data/manuscript_texts.csv')
+debates = pd.read_csv('data/debates.csv')
+shops = pd.read_csv('data/archivist_shops.csv')
+expeditions = pd.read_csv('data/expeditions.csv')
+word_index = pd.read_csv('data/word_index.csv')
+forgery = pd.read_csv('data/forgery_evidence.csv')
 ```
 
 ## Sample Queries

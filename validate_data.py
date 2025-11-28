@@ -145,8 +145,8 @@ def print_summary(data):
         print(f"  {row['manuscript_id']}: {row['title'][:50]}...")
 
 if __name__ == '__main__':
-    # Load data
-    data = load_all_data()
+    # Load data from data/ folder
+    data = load_all_data('data')
     
     if len(data) == 8:  # All files loaded
         # Run validations
