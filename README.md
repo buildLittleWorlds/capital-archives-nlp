@@ -1,13 +1,61 @@
-# The Capital Archives: Data Files
+# Capital Archives NLP
 
-A course teaching Natural Language Processing through the Densworld fictional setting.
+## A Natural Language Processing Tutorial Series
 
-## Run in Google Colab
+---
 
-Click any badge below to open the tutorial directly in Google Colab:
+*"A word is not a hard thing like a stone to be passed from one person to another. When Grigsu speaks a word, it dissolves into the air and reforms—imperfectly—in Yasho's mind. What arrives is never what departed."*
 
-| Tutorial | Title | Open in Colab |
-|----------|-------|---------------|
+---
+
+## Course Overview
+
+This course teaches Natural Language Processing through the Capital Archives—a vast collection of philosophical manuscripts, scholarly debates, and historical records from the world of Densworld. You'll learn real NLP techniques while investigating a centuries-old mystery: are certain manuscripts attributed to the philosopher Grigsu Haldo actually forgeries?
+
+### The Forgery Investigation
+
+Three manuscripts (MS-0156, MS-0157, MS-0158) claim to show Grigsu recanting his stone-school views. Evidence suggests these were forged by Mink Pavar after Grigsu's death. Throughout this course, you'll build the NLP skills needed to detect these forgeries using:
+
+- TF-IDF and vocabulary analysis
+- Stylometric comparison (sentence length, function words)
+- Topic modeling (do texts cluster with correct school?)
+- Cross-referencing with dated events
+
+---
+
+## Prerequisites
+
+- Basic Python experience
+- Familiarity with pandas (or complete [Yeller Quarry Data Science](https://github.com/buildLittleWorlds/yeller-quarry-data-science) first)
+
+## Compute Requirements
+
+- **Free Google Colab** — No GPU required, no paid subscriptions needed
+- All tutorials run in your browser with one click
+
+---
+
+## Learning Objectives
+
+By the end of this course, you will be able to:
+
+1. Load and explore text corpora using pandas
+2. Clean and preprocess text (tokenization, stopwords, normalization)
+3. Analyze word frequencies and build vocabulary profiles
+4. Find patterns using n-grams and collocations
+5. Perform part-of-speech tagging and syntactic analysis
+6. Calculate document similarity using TF-IDF
+7. Conduct authorship attribution using stylometry
+8. Analyze sentiment in historical texts
+9. Apply topic modeling (LDA) to discover themes
+10. Use all techniques to detect forged manuscripts
+
+---
+
+## The Tutorials
+
+| # | Tutorial | Notebook |
+|---|----------|----------|
 | 1 | Opening the Archive | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_01_opening_archive.ipynb) |
 | 2 | Cleaning the Stacks | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_02_cleaning_stacks.ipynb) |
 | 3 | The Word Counters | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_03_word_counters.ipynb) |
@@ -17,13 +65,24 @@ Click any badge below to open the tutorial directly in Google Colab:
 | 7 | The Voice of Grigsu | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_07_voice_grigsu.ipynb) |
 | 8 | Sentiment in the Margins | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_08_sentiment_margins.ipynb) |
 | 9 | The Map of Ideas | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_09_map_of_ideas.ipynb) |
-| 10 | The Forger's Hand | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_10_forgers_hand.ipynb) |
-
-> **Note:** After opening in Colab, run the first cell to clone the repository and set up the environment.
+| 10 | The Forger's Hand (Capstone) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/capital-archives-nlp/blob/main/tutorial_10_forgers_hand.ipynb) |
 
 ---
 
-## Dataset Statistics
+## The Datasets
+
+| File | Records | Description |
+|------|---------|-------------|
+| `scholars.csv` | 40 | Biographical registry of philosophers, scientists, historians |
+| `manuscripts.csv` | 125 | Catalog of archived texts (metadata only) |
+| `manuscript_texts.csv` | 169 sections | Actual text content for NLP analysis (~30,000 words) |
+| `debates.csv` | 30 | Recorded scholarly arguments |
+| `archivist_shops.csv` | 25 | Licensed archive establishments |
+| `expeditions.csv` | 20 | Documented journeys to Yeller Quarry, Mirado, etc. |
+| `word_index.csv` | 73 | Disputed terms with school-specific definitions |
+| `forgery_evidence.csv` | 15 | Evidence for the capstone forgery investigation |
+
+### Dataset Statistics
 
 | Metric | Value |
 |--------|-------|
@@ -33,35 +92,7 @@ Click any badge below to open the tutorial directly in Google Colab:
 | Total sentences | ~3,000 |
 | Authors represented | 18 |
 
-## Files Overview
-
-### Data Files (in `data/` folder)
-
-| File | Records | Description |
-|------|---------|-------------|
-| `data/scholars.csv` | 40 | Biographical registry of philosophers, scientists, historians |
-| `data/manuscripts.csv` | 125 | Catalog of archived texts (metadata only) |
-| `data/manuscript_texts.csv` | 169 sections | Actual text content for NLP analysis (~30,000 words) |
-| `data/debates.csv` | 30 | Recorded scholarly arguments |
-| `data/archivist_shops.csv` | 25 | Licensed archive establishments |
-| `data/expeditions.csv` | 20 | Documented journeys to Yeller Quarry, Mirado, etc. |
-| `data/word_index.csv` | 73 | Disputed terms with school-specific definitions |
-| `data/forgery_evidence.csv` | 15 | Evidence for the capstone forgery investigation |
-
-### Tutorial Topics
-
-| Tutorial | Title | Topics |
-|----------|-------|--------|
-| 1 | Opening the Archive | Loading data, pandas basics, exploring a corpus |
-| 2 | Cleaning the Stacks | Text cleaning, regex, string manipulation |
-| 3 | The Word Counters | Tokenization, word frequency, stopwords |
-| 4 | Patterns in the Stone | N-grams, collocations, concordance |
-| 5 | The Shape of Arguments | POS tagging, sentence analysis |
-| 6 | Sorting the Schools | TF-IDF, document similarity, clustering |
-| 7 | The Voice of Grigsu | Authorship attribution, stylometry |
-| 8 | Sentiment in the Margins | Sentiment analysis |
-| 9 | The Map of Ideas | Topic modeling (LDA) |
-| 10 | The Forger's Hand | **Capstone**: Forgery investigation |
+---
 
 ## Key Characters
 
@@ -90,24 +121,20 @@ Click any badge below to open the tutorial directly in Google Colab:
 - Key term: "lending"
 - Vocabulary markers: pebble, lending, return, origin, counting
 
-## The Forgery Mystery (Capstone)
+---
 
-Three manuscripts (MS-0156, MS-0157, MS-0158) claim to show Grigsu recanting his stone-school views. Evidence suggests these were forged by Mink Pavar after Grigsu's death:
+## Getting Started
 
-1. **Linguistic anomalies:** Water-school vocabulary in supposed stone-school texts
-2. **Anachronisms:** References to events that occurred after supposed composition dates
-3. **Physical evidence:** Paper and ink inconsistent with claimed dates
-4. **Motive:** The kachot dispute (DEB-12) created lasting resentment
+### Option 1: Google Colab (Recommended)
 
-Students will use NLP techniques to detect the forgeries:
-- TF-IDF and vocabulary analysis
-- Stylometric comparison (sentence length, function words)
-- Topic modeling (do texts cluster with correct school?)
-- Cross-referencing with dated events
+Click any "Open in Colab" badge in the tutorial table above. No local setup required.
 
-## Local Setup
+1. Click the badge for Tutorial 1
+2. Sign in with a Google account
+3. Go to **File > Save a copy in Drive** to keep your work
+4. Run the first cell to clone the repository and set up the environment
 
-If you prefer to run locally instead of Colab:
+### Option 2: Local Installation
 
 ```bash
 # Clone the repository
@@ -125,46 +152,28 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('vader_lexicon')
 ```
 
-## Loading the Data
+---
 
-```python
-import pandas as pd
+## Course Series Context
 
-scholars = pd.read_csv('data/scholars.csv')
-manuscripts = pd.read_csv('data/manuscripts.csv')
-texts = pd.read_csv('data/manuscript_texts.csv')
-debates = pd.read_csv('data/debates.csv')
-shops = pd.read_csv('data/archivist_shops.csv')
-expeditions = pd.read_csv('data/expeditions.csv')
-word_index = pd.read_csv('data/word_index.csv')
-forgery = pd.read_csv('data/forgery_evidence.csv')
-```
+This is a **foundational course** in the Densworld series. After completing this course, you can continue with:
 
-## Sample Queries
+- [ML Math with Densworld](https://github.com/buildLittleWorlds/ml-math-with-densworld) — Mathematical Foundations
+- [The Hugging Face Series](https://github.com/buildLittleWorlds/archivist-inference-engine) — Modern AI/ML (7 courses)
 
-```python
-# Find all stone-school scholars
-stone_school = scholars[scholars['philosophical_school'] == 'stone_school']
+### Connections to Other Courses
 
-# Get texts by Grigsu
-grigsu_texts = texts[texts['manuscript_id'].isin(
-    manuscripts[manuscripts['author'] == 'Grigsu Haldo']['manuscript_id']
-)]
-
-# Find suspected forgeries
-forgeries = manuscripts[manuscripts['authenticity_status'] == 'suspected_forgery']
-
-# Get all debates involving Yasho
-yasho_debates = debates[debates['participants'].str.contains('SCH-002')]
-```
-
-## Connections to Yeller Quarry Course
-
-- Bagbu (Vagabu Olt) appears in both courses
-- Expeditions reference the same crews and creatures
-- "Yeller numbers" (2, 3, 5, 7, 11) appear as a pattern in both
+- **Bagbu (Vagabu Olt)** appears in both this course and Yeller Quarry
+- **Expeditions** reference the same crews and creatures from Yeller Quarry
+- **"Yeller numbers"** (2, 3, 5, 7, 11) appear as patterns in both courses
 - The philosophical debate about words provides framework for discussing tokenization
+
+---
 
 ## License
 
 This project is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0). See [LICENSE](LICENSE) for details.
+
+---
+
+*"The Archives contain shadows, not the reality. Every manuscript is a copy of a thought that once lived in someone's mind—and copies decay."*
